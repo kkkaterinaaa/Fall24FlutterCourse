@@ -57,33 +57,65 @@ class LAb1HomePage extends StatelessWidget {
   }
 
   Widget exercise1() {
-    return const FlutterLogo(
-      size: 100,
+    return const Text(
+      "Hello, Flutter!",
+      style: TextStyle(
+          fontSize: 35, color: Colors.pink, fontWeight: FontWeight.bold),
     );
   }
 
   Widget exercise2() {
-    return const FlutterLogo(
+    return const Icon(
+      Icons.audiotrack,
       size: 100,
+      color: Color.fromARGB(255, 4, 12, 239),
     );
   }
 
   Widget exercise3() {
-    // Example for image from internet 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'
-    return const FlutterLogo(
-      size: 100,
+    return const Image(
+      width: 100,
+      height: 100,
+      image: NetworkImage(
+          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+      fit: BoxFit.cover,
     );
   }
 
+  printPressed() {
+    print("Pressed");
+  }
+
   Widget exercise4() {
-    return const FlutterLogo(
-      size: 100,
+    return TextButton(
+      onPressed: printPressed,
+      child: const Text('Click here!'),
     );
   }
 
   Widget exercise5() {
-    return const FlutterLogo(
-      size: 100,
+    return Column(
+      children: [
+        Container(
+          color: Colors.pinkAccent,
+          padding: const EdgeInsets.all(20.0),
+          margin: const EdgeInsets.only(left: 10.0),
+          child: const Text(
+            'Have a nice day!',
+            style: TextStyle(fontSize: 30),
+          ),
+        ),
+        Container(
+          color: Colors.black,
+          padding: const EdgeInsets.all(15.0),
+          margin: const EdgeInsets.only(top: 10.0),
+          child: const Icon(
+            Icons.favorite,
+            size: 35,
+            color: Colors.red,
+          ),
+        ),
+      ],
     );
   }
 }
